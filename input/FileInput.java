@@ -82,19 +82,19 @@ public class FileInput {
 
 	public static void txtFileDisplay(ArrayList<String> words) {            //creating txtFileDisplay method for for storing the words into another txtfile
 		try{    
-			FileWriter f=new FileWriter("F:\\file.txt");
-			BufferedWriter fw=new BufferedWriter(f);
+			FileWriter fileWriter=new FileWriter("F:\\file.txt");
+			BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
 			int count=1;
 
 			for(String word:words) {
-				fw.write("word"+count+" = "+word);
-				fw.newLine();
+				bufferedWriter.write("word"+count+" = "+word);
+				bufferedWriter.newLine();
 				count++;
 
 			}
 
 
-			fw.close();    
+			bufferedWriter.close();    
 		}catch(Exception expection){
 
 			log.error("File not found");
